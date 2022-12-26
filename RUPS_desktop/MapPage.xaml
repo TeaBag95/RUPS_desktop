@@ -9,13 +9,18 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MapPage">
 
-    <Grid Name="MainGrid" Height="Auto" Width="Auto">
+    <Grid Name="MainGrid" Height="Auto" Width="Auto" Margin="20">
         <Grid.RowDefinitions>
             <RowDefinition />
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-        <m:Map Grid.Row="1" Center="37.806029,-122.407007" ZoomLevel="16" Height="Auto" CredentialsProvider="PpvXX6nNV4Vp10OM35hx~Bfi7OOQO-CUegXc3DsmBRA~ApJHMAB8Ioifh49pEdM9ytGwaF6702tJ2MetRbHIf5OKJ8OpmpXVeMyzIgLfTf3y"/>
-
-
+        <m:Map Grid.Row="1" Grid.Column="0" Name="myMap" Loaded="myMap_Loaded"  ZoomLevel="16" Height="Auto" CredentialsProvider="PpvXX6nNV4Vp10OM35hx~Bfi7OOQO-CUegXc3DsmBRA~ApJHMAB8Ioifh49pEdM9ytGwaF6702tJ2MetRbHIf5OKJ8OpmpXVeMyzIgLfTf3y"/>
+        <Button Grid.Row="0" Grid.Column="1" Name="HomePage_btn" Click="FindLocation_btn_Click" Width="150" Height="50" Margin="10, 5, 10, 5" Padding="5" Background="#002171" Foreground="#fbc02d">
+            <TextBlock>Find Closest Station</TextBlock>
+        </Button>
     </Grid>
 </Page>

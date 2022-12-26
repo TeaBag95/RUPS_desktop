@@ -9,7 +9,11 @@
 
     <Border CornerRadius="5" BorderThickness="1" Background="white" BorderBrush="red">
         <Grid Margin="5,5,5,2">
-            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Height="50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal" Height="50">
                 <Button Name="HomePage_btn" Click="HomePage_btn_Click" Width="100" Margin="10, 5, 10, 5" Padding="5" Background="#002171" Foreground="#fbc02d">
                     <TextBlock>Domov</TextBlock>
                 </Button>
@@ -20,7 +24,7 @@
                     <TextBlock>Iskalnik postajališč</TextBlock>
                 </Button>
             </StackPanel>
-            <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+            <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
         </Grid>
     </Border>
 </Window>

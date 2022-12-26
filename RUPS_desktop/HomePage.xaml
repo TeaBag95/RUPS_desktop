@@ -10,5 +10,6 @@
 
     <Grid>
         <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50">HomePage</Label>
+        
     </Grid>
 </Page>

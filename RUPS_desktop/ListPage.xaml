@@ -9,6 +9,23 @@
       Title="ListPage">
 
     <Grid>
-        <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50">ListPage</Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <Label Content="Search:" VerticalAlignment="Center" />
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="5" />
+            <Button x:Name="SearchButton" Content="Search" Width="75" Margin="5" />
+        </StackPanel>
+
+        <ListView Grid.Row="1" x:Name="ResultsListView">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>

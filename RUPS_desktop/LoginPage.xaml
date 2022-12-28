@@ -14,9 +14,9 @@
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
                 <TextBlock FontSize="30" HorizontalAlignment="Center">Login</TextBlock>
                 <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">E-mail:</TextBlock>
-                <TextBox FontSize="16"></TextBox>
+                <TextBox Name="email" FontSize="16"></TextBox>
                 <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">Geslo:</TextBlock>
-                <PasswordBox FontSize="16"></PasswordBox>
+                <PasswordBox Name="password" FontSize="16"></PasswordBox>
                 <Button Background="#fbc02d" Foreground="#002171" FontSize="16" Margin="10" MaxWidth="120" Height="38" Click="Login_btn_Click">
                     <Button.Resources>
                         <Style TargetType="Border">

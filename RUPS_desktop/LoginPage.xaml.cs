@@ -10,6 +10,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace RUPS_desktop
 {
@@ -25,10 +29,37 @@ namespace RUPS_desktop
 
         public void Login_btn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            LoginWindow parentWindow = (LoginWindow)Window.GetWindow(this);
-            parentWindow.Close();
+            try {
+                string url = "http://localhost:3002/api/public/login";
+                Trace.WriteLine(url);
+                var request = (HttpWebRequest)WebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+
+                using (var streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    string json = "{\"email\":\"" + email.Text + "\"," +
+                                  "\"password\":\"" + password.Password + "\"}";
+
+                    streamWriter.Write(json);
+                }
+
+                var httpResponse = (HttpWebResponse)request.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+
+                    Trace.WriteLine(result);
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    LoginWindow parentWindow = (LoginWindow)Window.GetWindow(this);
+                    parentWindow.Close();
+                }
+
+            } catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
         }
     }
 }

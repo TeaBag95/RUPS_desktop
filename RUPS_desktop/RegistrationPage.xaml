@@ -1,0 +1,35 @@
+﻿<Page x:Class="RUPS_desktop.RegistrationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:RUPS_desktop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistrationPage">
+
+    <Border CornerRadius="5" BorderThickness="1" Background="#5472d3 " BorderBrush="red">
+        <Grid>
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
+                <TextBlock FontSize="30" HorizontalAlignment="Center" Foreground="White">Registracija</TextBlock>
+                <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">E-mail:</TextBlock>
+                <TextBox Name="email" FontSize="16" TextChanged="Content_TextChanged"></TextBox>
+                <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">Geslo:</TextBlock>
+                <PasswordBox Name="Password" FontSize="16" PasswordChar="*" PasswordChanged="Content_TextChanged"></PasswordBox>
+                <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">Ponovi geslo:</TextBlock>
+                <PasswordBox Name="PasswordConf" FontSize="16" PasswordChar="*" PasswordChanged="Content_TextChanged"></PasswordBox>
+                <Button Name="Register_btn" Background="#fbc02d" Foreground="#002171" FontSize="16" Margin="10" MaxWidth="120" Height="38" Click="Registration_btn_Click" IsEnabled="False">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                    Registracija
+                </Button>
+                <TextBlock HorizontalAlignment="Center">
+                    <Hyperlink NavigateUri="LoginPage.xaml" Foreground="#fbc02d">Login </Hyperlink>
+                </TextBlock>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Page>

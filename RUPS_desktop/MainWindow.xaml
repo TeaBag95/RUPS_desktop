@@ -23,6 +23,9 @@
                 <Button Name="MapPage_btn" Click="MapPage_btn_Click" Width="100" Margin="10, 5, 10, 5" Padding="5" Background="#0d47a1" Foreground="white">
                     <TextBlock>Iskalnik postajališč</TextBlock>
                 </Button>
+                <Button Name="Odjava_btn" Click="Odjava_btn_Click" Width="100" Margin="10, 5, 10, 5" Padding="5" Background="#0d47a1" Foreground="white">
+                    <TextBlock>Odjava</TextBlock>
+                </Button>
             </StackPanel>
             <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
         </Grid>

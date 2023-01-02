@@ -70,5 +70,14 @@ namespace RUPS_desktop
             ListPage_btn.Foreground = Brushes.White;
             MapPage_btn.Foreground = new SolidColorBrush(selectedText);
         }
+
+        private void Odjava_btn_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Properties["Cookie"] = null;
+
+            LoginWindow login = new LoginWindow();
+            login.Show();
+            this.Close();
+        }
     }
 }

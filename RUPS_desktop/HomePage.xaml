@@ -19,7 +19,7 @@
                 <TextBlock  Width="50">Vsebina: </TextBlock>
                 <TextBox  Height="40" Name="content" Width="200"></TextBox>
             </StackPanel>
-            <Button Margin="0,0,0,10" Width="100" Click="postNotice">Dodaj obvestilo</Button>
+            <Button Margin="0,0,0,10" Padding="5" Width="100" Click="postNotice" Background="#002171" Foreground="#fbc02d">Dodaj obvestilo</Button>
             <TextBlock>Seznam obvestil:</TextBlock>
             <ItemsControl x:Name="ic">
                 <ItemsControl.ItemTemplate>

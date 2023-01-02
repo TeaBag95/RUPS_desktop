@@ -16,14 +16,15 @@
 
         <StackPanel Orientation="Horizontal" Margin="10">
             <Label Content="Search:" VerticalAlignment="Center" />
-            <TextBox x:Name="SearchTextBox" Width="200" Margin="5" />
-            <Button x:Name="SearchButton" Content="Search" Width="75" Margin="5" />
+            <TextBox x:Name="SearchTextBox" Width="200" Margin="5"  />
+            <Button x:Name="SearchButton" Content="Search" Width="75" Margin="5" IsDefault="True"/>
         </StackPanel>
 
         <ListView Grid.Row="1" x:Name="ResultsListView">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding name}" Width="250" />
+                    <GridViewColumn Header="Address" DisplayMemberBinding="{Binding address}" Width="500" />
                 </GridView>
             </ListView.View>
         </ListView>

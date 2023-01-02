@@ -31,7 +31,7 @@ namespace RUPS_desktop
             try
             {
                 string url = "http://localhost:3002/api/public/register";
-                Trace.WriteLine(url);
+                
                 var request = (HttpWebRequest)WebRequest.Create(url);
                 request.Method = "POST";
                 request.ContentType = "application/json";

@@ -56,19 +56,16 @@ namespace RUPS_desktop
             {
                 html = reader.ReadToEnd();
             }
-            Trace.WriteLine("-------------"+html);
             dynamic myDeserializedClass = JsonConvert.DeserializeObject<dynamic>(html);
             dynamic notices = myDeserializedClass.notices;
             var data = new List<Notice> {};
 
-            //data.Add(new Notice("title1", "content1"));
             foreach(var item in notices)
             {
                 string title = item.title;
                 string content = item.content;
                 data.Add(new Notice(title, content));
             }
-            Trace.WriteLine("------------------" + data[0].title);
             return data;
         }
 

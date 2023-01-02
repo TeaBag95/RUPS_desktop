@@ -32,7 +32,7 @@ namespace RUPS_desktop
             try {
                 var cookies = new CookieContainer();
                 string url = "http://localhost:3002/api/public/login";
-                Trace.WriteLine(url);
+                
                 var request = (HttpWebRequest)WebRequest.Create(url);
                 request.CookieContainer = cookies;
                 request.Method = "POST";
@@ -48,12 +48,11 @@ namespace RUPS_desktop
 
                 var httpResponse = (HttpWebResponse)request.GetResponse();
                 App.Current.Properties["Cookie"] = httpResponse.Headers[HttpResponseHeader.SetCookie];
-                //Application.SetCookie("", httpResponse.Cookies);
+                
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
 
-                    Trace.WriteLine(result);
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     LoginWindow parentWindow = (LoginWindow)Window.GetWindow(this);

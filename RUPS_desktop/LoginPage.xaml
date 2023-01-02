@@ -12,7 +12,7 @@
     <Border CornerRadius="5" BorderThickness="1" Background="#5472d3 " BorderBrush="red">
         <Grid>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Width="200">
-                <TextBlock FontSize="30" HorizontalAlignment="Center">Login</TextBlock>
+                <TextBlock FontSize="30" HorizontalAlignment="Center" Foreground="White">Login</TextBlock>
                 <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">E-mail:</TextBlock>
                 <TextBox Name="email" FontSize="16"></TextBox>
                 <TextBlock FontSize="16" Margin="10,10,10,0" Foreground="White">Geslo:</TextBlock>

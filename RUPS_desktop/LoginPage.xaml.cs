@@ -47,7 +47,6 @@ namespace RUPS_desktop
                 }
 
                 var httpResponse = (HttpWebResponse)request.GetResponse();
-                Trace.WriteLine("!!!!!!!!!!!!!!!!!!! "+ httpResponse.Headers[HttpResponseHeader.SetCookie]);
                 App.Current.Properties["Cookie"] = httpResponse.Headers[HttpResponseHeader.SetCookie];
                 //Application.SetCookie("", httpResponse.Cookies);
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))

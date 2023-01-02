@@ -27,7 +27,9 @@
                     <TextBlock>Odjava</TextBlock>
                 </Button>
             </StackPanel>
-            <Frame Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+            <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+                <Frame Name="MainFrame" NavigationUIVisibility="Hidden"></Frame>
+            </ScrollViewer>
         </Grid>
     </Border>
 </Window>

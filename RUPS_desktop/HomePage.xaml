@@ -11,25 +11,25 @@
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">OBVESTILA</Label>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel  Margin="10" Orientation="Horizontal">
                 <TextBlock Width="50">Naslov: </TextBlock>
                 <TextBox Name="title" Width="200"></TextBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Width="50">Vsebina: </TextBlock>
-                <TextBox Name="content" Width="200"></TextBox>
+            <StackPanel Margin="10,0,0,10" Orientation="Horizontal">
+                <TextBlock  Width="50">Vsebina: </TextBlock>
+                <TextBox  Height="40" Name="content" Width="200"></TextBox>
             </StackPanel>
-            <Button Width="100" Click="postNotice">Dodaj obvestilo</Button>
+            <Button Margin="0,0,0,10" Width="100" Click="postNotice">Dodaj obvestilo</Button>
             <TextBlock>Seznam obvestil:</TextBlock>
             <ItemsControl x:Name="ic">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
+                        <Grid >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <TextBlock Text="{Binding title}" FontSize="20" />
+                            <TextBlock Text="{Binding title}" FontSize="20" Width="100" />
                             <TextBlock Text="{Binding content}" FontSize="20" Grid.Column="1" />
                         </Grid>
                     </DataTemplate>

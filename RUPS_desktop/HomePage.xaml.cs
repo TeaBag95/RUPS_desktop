@@ -68,7 +68,6 @@ namespace RUPS_desktop
                 string content = item.content;
                 data.Add(new Notice(title, content));
             }
-            Trace.WriteLine("------------------" + data[0].title);
             return data;
         }
 
